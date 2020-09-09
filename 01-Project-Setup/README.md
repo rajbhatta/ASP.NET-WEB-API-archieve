@@ -92,6 +92,9 @@ namespace WebApplication1
                 name: "ActionApi",
                 routeTemplate: "action/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional });
+                
+                //Note: According to this routing, all the request sent from localhost:4345/action/{contoller_name} will be handled by this.
+                // Assumption right now for proper controller finding is folder(action)- any_controller_name will be handled by this.
         }
     }
 }
