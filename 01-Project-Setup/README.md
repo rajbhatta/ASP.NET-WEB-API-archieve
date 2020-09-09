@@ -38,6 +38,30 @@ namespace WebApplication1
     }
 }
 ```
+According to above default configuration, if we add another controller such as 
+```js
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Web.Http;
+
+namespace WebApplication1.Controllers
+{
+    public class UserController : ApiController
+    {
+        public String getUser()
+        {
+            return "TestUser";
+        }
+    }
+}
+```
+Then we can access this controller using 
+```js
+localhost:4345/api/user (note we need to use api because we are still using  routeTemplate: "api/{controller}/{id}" where controller is controller name and id is option)
+```
 
 
 ### 5. How to write HTTP request such as GET, POST, PUT ? ###
