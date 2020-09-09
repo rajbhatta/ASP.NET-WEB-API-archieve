@@ -112,10 +112,10 @@ public void handlePostMethod(){
 }
 
 2. Using get(MethodName), post(MethodName)
-public void <b>get</b>Request(){
+public void getRequest(){
 }
 
-public void <b>post</b>Request(){
+public void postRequest(){
 }
 ```
 
