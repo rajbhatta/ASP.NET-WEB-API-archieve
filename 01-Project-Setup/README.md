@@ -101,6 +101,7 @@ namespace WebApplication1
 ```
 
 ### 5. How to write HTTP request such as GET, POST, PUT ? ###
+```js
 1. Using HTTP verb
 [HttpGet]
 public void handleGetMethod(){
@@ -116,6 +117,7 @@ public void <b>get</b>Request(){
 
 public void <b>post</b>Request(){
 }
+```
 
 ### References ### 
 https://www.tutorialsteacher.com/webapi/create-web-api-project
