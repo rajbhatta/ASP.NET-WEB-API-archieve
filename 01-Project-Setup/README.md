@@ -101,7 +101,21 @@ namespace WebApplication1
 ```
 
 ### 5. How to write HTTP request such as GET, POST, PUT ? ###
+1. Using HTTP verb
+[HttpGet]
+public void handleGetMethod(){
+}
 
+[HttpPost]
+public void handlePostMethod(){
+}
+
+2. Using get(MethodName), post(MethodName)
+public void <b>get</b>Request(){
+}
+
+public void <b>post</b>Request(){
+}
 
 ### References ### 
 https://www.tutorialsteacher.com/webapi/create-web-api-project
