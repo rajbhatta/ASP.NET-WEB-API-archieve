@@ -123,3 +123,8 @@ public void postRequest(){
 https://www.tutorialsteacher.com/webapi/create-web-api-project
 <br/>
 https://www.youtube.com/watch?v=iaeHaydhatE
+
+
+### Official References ###
+Routing in ASP.NET WEB API
+#### https://docs.microsoft.com/en-us/aspnet/web-api/overview/web-api-routing-and-actions/routing-in-aspnet-web-api  ####
