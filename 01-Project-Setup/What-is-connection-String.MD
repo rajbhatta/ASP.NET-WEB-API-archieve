@@ -19,6 +19,10 @@ Initial Catalog=Database name
 - Expand Data Connections.
 ```
 ## How to create new connection in ASP.NET WEB API
+<img src="Connect1.png"/>
+
+<br/>
+<img src="Connect2.png"/>
 
 ### References ###
 https://www.c-sharpcorner.com/UploadFile/7d3362/various-ways-to-specify-connection-string-in-Asp-Net-web-app/
