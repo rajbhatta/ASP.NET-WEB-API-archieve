@@ -1,5 +1,5 @@
 ## How connection String is managed in .NET ##
-```c#
+```java
 <connectionStrings>  
    <add name="mytest" connectionString="Data Source=.\SQLEXPRESS;Initial Catalog=mytest;Integrated Security=True;" providerName="System.Data.SqlClient" />  
    <add name="Northwind" connectionString="Data Source=.\SQLEXPRESS;Initial Catalog=Northwind;Integrated Security=True;" providerName="System.Data.SqlClient" />  
@@ -12,7 +12,7 @@ Data Source= Data source is the name of the MS SQL server instance you are conne
 Initial Catalog=Database name
 
 ## How to see all possible connection string in ASP.NET WEB API ##
-```c#
+```java
 - View -> Server Explorer.
 - Expand Data Connections.
 ```
