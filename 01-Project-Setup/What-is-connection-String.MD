@@ -7,9 +7,11 @@
 </connectionStrings>  
 ```
 
+```c#
 1. <add name="mytest" connectionString="Data Source=.\SQLEXPRESS;Initial Catalog=mytest;Integrated Security=True;" providerName="System.Data.SqlClient" />  
 Data Source= Data source is the name of the MS SQL server instance you are connecting to
 Initial Catalog=Database name
+```
 
 ## How to see all possible connection string in ASP.NET WEB API ##
 ```java
