@@ -100,7 +100,9 @@ This type of URI is difficult to create using convention-based routing. Although
 
 With attribute routing, it's trivial to define a route for this URI. You simply add an attribute to the controller action:
 
+```c#
 [Route("customers/{customerId}/orders")]
 public IEnumerable<Order> GetOrdersByCustomer(int customerId) { ... }
+```
 
 
