@@ -65,6 +65,12 @@ namespace MessgeWithSendGrid.Controllers
         {
             return "TestUser";
         }
+        
+         [HttpGet]
+        public String deleteUser(int id)
+        {
+            return "TestUser"+id;
+        }
 
     }
 }
@@ -73,5 +79,28 @@ namespace MessgeWithSendGrid.Controllers
 How to access it
 <br/>
 http://localhost:50783/api/user
+
+How to access it
+<br/>
+http://localhost:50783/api/user/5
+
+## 3. How to use HttpVerb with @Route (attribute routing) ##
+### 3.1 What is attribute based routing in APS.NET ###
+
+<b> Problems </b>
+
+Unfortunately, convention-based routing makes it hard to support certain URI patterns that are common in RESTful APIs. For example, resources often contain child resources: Customers have orders, movies have actors, books have authors, and so forth. It's natural to create URIs that reflect these relations:
+
+/customers/1/orders
+
+
+<b> Solutions </b>
+
+This type of URI is difficult to create using convention-based routing. Although it can be done, the results don't scale well if you have many controllers or resource types.
+
+With attribute routing, it's trivial to define a route for this URI. You simply add an attribute to the controller action:
+
+[Route("customers/{customerId}/orders")]
+public IEnumerable<Order> GetOrdersByCustomer(int customerId) { ... }
 
 
