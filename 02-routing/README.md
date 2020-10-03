@@ -105,4 +105,35 @@ With attribute routing, it's trivial to define a route for this URI. You simply 
 public IEnumerable<Order> GetOrdersByCustomer(int customerId) { ... }
 ```
 
+### 3.2 Example of attribute based routing using controller ###
+ ```java
+ using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Web.Http;
+
+namespace MessgeWithSendGrid.Controllers
+{
+    public class UserController : ApiController
+    {
+        [HttpGet]
+        public String testUser()
+        {
+            return "TestUser";
+        }
+
+        [HttpGet]
+        [Route("school/users/{id}/orders")]
+        public String deleteUser(int id)
+        {
+            return "TestUser"+id;
+        }
+
+    }
+}
+```
+Link1: http://localhost:50783/school/users/1/orders
+
 
