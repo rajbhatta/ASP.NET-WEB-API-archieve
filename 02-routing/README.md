@@ -1,45 +1,6 @@
-## Getting started with ASP.NET ##
-
-### 1. How to create a ASP.NET WEB API ###
-<img src="Step1.png" />
-
-### 2. How to select web API ###
-<img src="Step2.png" />
-
-### 3. Project Structure ###
-This project is same as default MVC project with two specific files for Web API, WebApiConfig.cs in <b>App_Start </b> folder and ValuesController.cs in Controllers folder as shown below.
-
-<img src="Step3.png"/>
-
-### 4. What is inside WebApiConfig.cs and how it works? ###
-```cs
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Http;
-
-namespace WebApplication1
-{
-    public static class WebApiConfig
-    {
-        public static void Register(HttpConfiguration config)
-        {
-            // Web API configuration and services
-
-            // Web API routes
-            config.MapHttpAttributeRoutes();
-
-            config.Routes.MapHttpRoute(
-                name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
-            );
-        }
-    }
-}
-```
-According to above default configuration, if we add another controller such as 
-```js
+## How to work with routing in ASP.NET WEB API ##
+### 1. User controller in ASP.NET ###
+```c#
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,7 +8,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace WebApplication1.Controllers
+namespace MessgeWithSendGrid.Controllers
 {
     public class UserController : ApiController
     {
@@ -55,76 +16,23 @@ namespace WebApplication1.Controllers
         {
             return "TestUser";
         }
-    }
-}
-```
-Then we can access this controller using 
-```js
-localhost:4345/api/user (note we need to use api because we are still using  
-routeTemplate: "api/{controller}/{id}" where controller is controller name and id is optional)
-```
-
-#### 4.1 How to add new routing? ####
-```cs
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Http;
-
-namespace WebApplication1
-{
-    public static class WebApiConfig
-    {
-        public static void Register(HttpConfiguration config)
+        
+        public String getUserId(int id)
         {
-            // Web API configuration and services
-
-            // Web API routes
-            config.MapHttpAttributeRoutes();
-
-            config.Routes.MapHttpRoute(
-                name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
-            );
-
-            config.Routes.MapHttpRoute(
-                name: "ActionApi",
-                routeTemplate: "action/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional });
-                
-                //Note: According to this routing, all the request sent from localhost:4345/action/{contoller_name} will be handled by this.
-                // Assumption right now for proper controller finding is folder(action)- any_controller_name will be handled by this.
+            return "TestUser"+id;
         }
+
     }
 }
 ```
 
-### 5. How to write HTTP request such as GET, POST, PUT ? ###
-```js
-1. Using HTTP verb
-[HttpGet]
-public void handleGetMethod(){
-}
-
-[HttpPost]
-public void handlePostMethod(){
-}
-
-2. Using get(MethodName), post(MethodName)
-public void getRequest(){
-}
-
-public void postRequest(){
-}
-```
-
-### References ### 
-https://www.tutorialsteacher.com/webapi/create-web-api-project
+### 2. How to access UserController ###
+Access first method:
 <br/>
-https://www.youtube.com/watch?v=iaeHaydhatE
+http://localhost:50783/api/user
 
 
-### Official References ###
-Routing in ASP.NET WEB API
-#### https://docs.microsoft.com/en-us/aspnet/web-api/overview/web-api-routing-and-actions/routing-in-aspnet-web-api  ####
+Access second method:
+<br/>
+http://localhost:50783/api/user/5
+
